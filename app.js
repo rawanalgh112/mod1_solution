@@ -20,7 +20,7 @@ var fruits = [];
 console.log(fruits); // 3
 
 
-if (fruits.length === 1 && (fruits[0] === "" || fruits[0] === " " )){
+if (fruits.length === 1 && fruits[0] === ""){
   document.getElementById('msg').style.color="red";
     document.getElementById('msg').style.border = "3px solid red";
 
