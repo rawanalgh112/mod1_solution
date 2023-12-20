@@ -4,28 +4,49 @@
 
 var x =
 
-angular.module('NameCalculator', [])
+angular.module('AssiCalculator', [])
 
-.controller('NameCalculatorController' , function ($scope) {
+.controller('LunchCheckController' , function ($scope) {
 $scope.name = "" ;
-$scope.totalValue = 0 ;
+$scope.Message= "";
 
-$scope.displayNumeric= function () {
-var totalNameValue = calculateNumericForString ($scope.name)  ; // get the total value
-$scope.totalValue = totalNameValue;
+$scope.Check = function () {
 
-};
+ var originalString = document.getElementById('Mealsinput').value;
+var fruits = [];
 
-function calculateNumericForString (string) {
-var totalStringValue = 0 ;
-for (var i = 0 ; i < string.length ; i ++){
+ fruits = originalString.split(',');
 
-  totalStringValue += string.charCodeAt(i);
+console.log(fruits); // 3
+
+
+if (fruits.length === 1 && fruits[0] === ""){
+  document.getElementById('msg').style.color="red";
+    document.getElementById('msg').style.border = "3px solid red";
+
+$scope.Message= "Please enter data first";
+}
+
+else if(fruits.length <= 3 ){
+    document.getElementById('msg').style.color="green";
+        document.getElementById('msg').style.border = "3px solid green";
+$scope.Message= "Enjoy !";
+}
+
+else if (fruits.length > 3 ){
+    document.getElementById('msg').style.color="green";
+        document.getElementById('msg').style.border = "3px solid green";
+$scope.Message= "Too much !";
 
 }
- return totalStringValue;
+
+
+
+
 
 }
+
+
 
 });
 

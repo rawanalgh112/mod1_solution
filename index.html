@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app="NameCalculator">
+<html lang="en" dir="ltr" ng-app="AssiCalculator">
   <head>
     <meta charset="utf-8">
     <title> Hello Corsera </title>
@@ -10,17 +10,20 @@
 
   </head>
   <body>
-    <div ng-controller="NameCalculatorController">
-    <h1 style="color: pink"> Hello Corsera Students rawan!</h1>
+    <div ng-controller="LunchCheckController">
+    <h1 style="color: pink"> Hello Corsera !</h1>
 
 
 
-    <div id="NameCalculator">
+    <div id="AssiCalculator">
       <div>
-your name: <input type="text" ng-model="name" ng-keyup="displayNumeric();">
+your name: <input type="text" id="Mealsinput">
+<!-- Empty item is considered -->
       </div>
+  <button ng-click="Check()" > Check </button>
 
-      <div style="margin-top:30px"> Total numeric value of person's name is: {{totalValue}}  </div>
+
+      <div id="msg"> {{Message}}  </div>
     </div>
 
 </div>
